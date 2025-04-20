@@ -1,8 +1,0 @@
-import{o as t,c as r,k as u,e,aa as n,q as o,s as p,B as s}from"./modules/vue-DETF4kot.js";import{I as c}from"./slidev/default-3SP_DrR2.js";import{u as d,f as m}from"./slidev/context-BXNoek_6.js";import"./index-BK-L_qr3.js";import"./modules/shiki-DJ5BIT2Z.js";const R={__name:"5-malware-erkennung.md__slidev_26",setup(f){const{$slidev:g,$nav:k,$clicksContext:a,$clicks:h,$page:_,$renderContext:$,$frontmatter:i}=d();return a.setup(),(b,l)=>(t(),r(c,o(p(s(m)(s(i),25))),{default:u(()=>l[0]||(l[0]=[e("h1",null,"Erkennung mit YARA-Regeln",-1),e("p",null,"Malware Erkennung",-1),e("ul",null,[e("li",null,[n("Beispiel für YARA-Regel, die „uplugplay“ als Merkmal nutzt:"),e("pre",{class:"shiki shiki-themes vitesse-dark vitesse-light slidev-code",style:{"--shiki-dark":"#dbd7caee","--shiki-light":"#393a34","--shiki-dark-bg":"#121212","--shiki-light-bg":"#ffffff"}},[e("code",{class:"language-text"},[e("span",{class:"line"},[e("span",null,"rule Prometei")]),n(`
-`),e("span",{class:"line"},[e("span",null,"{")]),n(`
-`),e("span",{class:"line"},[e("span",null,"    strings:")]),n(`
-`),e("span",{class:"line"},[e("span",null,'        $binary = "uplugplay"')]),n(`
-`),e("span",{class:"line"},[e("span",null,'        $alt_bin = "Bon=UPlug"')]),n(`
-`),e("span",{class:"line"},[e("span",null,"    condition:")]),n(`
-`),e("span",{class:"line"},[e("span",null,"        $binary or $alt_bin")]),n(`
-`),e("span",{class:"line"},[e("span",null,"}")])])])]),e("li",null,[n("Vorteile: "),e("ul",null,[e("li",null,"Flexibel und spezifisch für unterschiedliche Malware-Varianten"),e("li",null,"Erkennt auch angepasste Versionen von Prometei, die nicht mehr auf Standard-Signaturen basieren")])])],-1)])),_:1},16))}};export{R as default};
