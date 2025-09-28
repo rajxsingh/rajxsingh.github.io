@@ -5,111 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/index.css">
+    <script src="/index.js"></script>
     <title>rajxsingh</title>
-    <style>
-        body {
-            cursor: none;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            overflow: hidden;
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .mouse-trail {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            animation: mouseTrailAnimation 0.4s ease-in-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes mouseTrailAnimation {
-
-            0%,
-            20% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-
-            30% {
-                transform: translateY(10px) scale(0.8);
-                opacity: 0.8;
-            }
-
-            40% {
-                transform: translateY(10px) scale(0.7);
-                opacity: 0.7;
-            }
-
-            50% {
-                transform: translateY(10px) scale(0.6);
-                opacity: 0.6;
-            }
-
-            60% {
-                transform: translateY(10px) scale(0.5);
-                opacity: 0.5;
-            }
-
-            70% {
-                transform: translateY(10px) scale(0.4);
-                opacity: 0.4;
-            }
-
-            80% {
-                transform: translateY(10px) scale(0.3);
-                opacity: 0.3;
-            }
-
-            90% {
-                transform: translateY(10px) scale(0.2);
-                opacity: 0.2;
-            }
-
-            100% {
-                transform: translateY(15px) scale(0.1);
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <script>
-        function getRandomColor() {
-            const colors = ['#008C45', '#F4F9FF', '#CD212A'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
+    <main class="card" role="main">
+        <section class="header">
+            <div class="avatar" title="Avatar">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <title id="avtitle">rajxsingh</title>
+                    <rect width="120" height="120" rx="18" fill="#ddd" />
+                    <image href="/avatar.png" x="0" y="0" width="120" height="120" clip-path="url(#rounded)" />
+                    <defs>
+                        <clipPath id="rounded">
+                            <rect width="120" height="120" rx="18" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
 
-        function renderTrail(e) {
-            const mouseX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX;
-            const mouseY = e instanceof MouseEvent ? e.clientY : e.touches[0].clientY;
+            <div class="who">
+                <div id="portfolio-title" class="name">Raj Singh</div>
+                <div class="role"></div>
+                <div class="meta"></div>
+            </div>
+        </section>
 
-            // Create a new mouse trail element
-            const mouseTrail = document.createElement('div');
-            mouseTrail.className = 'mouse-trail';
-            mouseTrail.style.left = mouseX + 'px';
-            mouseTrail.style.top = mouseY + 'px';
-            mouseTrail.style.backgroundColor = getRandomColor();
-
-            // Append the trail element to the body
-            document.body.appendChild(mouseTrail);
-
-            // Remove the trail element after a short delay
-            setTimeout(function () {
-                mouseTrail.remove();
-            }, 400);
-        }
-
-        document.addEventListener('mousemove', renderTrail);
-        document.addEventListener('touchmove', renderTrail);
-    </script>
+        <nav class="tiles"></nav>
+    </main>
 </body>
 
 </html>
