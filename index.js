@@ -38,10 +38,16 @@ function renderTiles() {
             description: "KI-gestützte Generierung dynamischer Webseiteninhalte"
         },
         {
-            href: "/bru-game-jam",
+            href: "/bru-game-jam/1",
             icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
             title: "Game",
             description: "Catch the dot"
+        },
+                {
+            href: "/bru-game-jam/2",
+            icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
+            title: "Game",
+            description: "BruDuck"
         },
         {
             href: "/dva",
