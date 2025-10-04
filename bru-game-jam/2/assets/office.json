@@ -43,7 +43,7 @@
         {
          "columns":8,
          "firstgid":1,
-         "image":".\/tilemap-template-32px-grid-dark.png",
+         "image":"tilemap-template-32px-grid-dark.png",
          "imageheight":192,
          "imagewidth":256,
          "margin":0,
@@ -597,6 +597,11 @@
                              "properties":[
                                     {
                                      "name":"collides",
+                                     "type":"bool",
+                                     "value":true
+                                    }, 
+                                    {
+                                     "name":"developer",
                                      "type":"bool",
                                      "value":true
                                     }],
