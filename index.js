@@ -62,6 +62,12 @@ function renderTiles() {
             description: "GHunter &ndash; ITSEC"
         },
         {
+            href: "/ms",
+            icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
+            title: "Assignment",
+            description: "The Effect of Structured Prompts on Small Instruction-Finetuned Language Models &ndash; MS"
+        },
+        {
             href: "/nonogram",
             icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
             title: "Game",
