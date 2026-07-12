@@ -74,6 +74,12 @@ function renderTiles() {
             description: "Nonogram"
         },
         {
+            href: "/rajino",
+            icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
+            title: "Game",
+            description: "Rajino"
+        },
+        {
             href: "/webprog",
             icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2V11h2v5.5zm0-7.5h-2V7h2v2z",
             title: "Assignment",
