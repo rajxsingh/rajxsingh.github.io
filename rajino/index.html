@@ -41,12 +41,18 @@
             return;
           }
 
-          const currentMessage = data.messages.length
-            ? data.messages.reduce((latest, message) => {
-                const latestTime = new Date(latest.delivery_time || latest.date).getTime();
-                const messageTime = new Date(message.delivery_time || message.date).getTime();
-                return messageTime > latestTime ? latest : message;
-              }, data.messages[0])
+          const nowTime = now.getTime();
+          const deliveredMessages = data.messages.filter((message) => {
+            const messageTime = new Date(message.delivery_time).getTime();
+            return !Number.isNaN(messageTime) && messageTime <= nowTime;
+          });
+
+          const currentMessage = deliveredMessages.length
+            ? deliveredMessages.reduce((latest, message) => {
+                const latestTime = new Date(latest.delivery_time).getTime();
+                const messageTime = new Date(message.delivery_time).getTime();
+                return messageTime > latestTime ? message : latest;
+              }, deliveredMessages[0])
             : null;
 
           document.getElementById('current').innerHTML = `${workingInfo}<p><strong>Task:</strong> ${escapeHtml(data.task.text)}</p><p><strong>Current:</strong> ${escapeHtml(currentMessage ? currentMessage.text : 'No messages yet')}</p>`;
