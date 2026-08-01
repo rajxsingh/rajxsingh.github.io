@@ -2,39 +2,39 @@
   "date": "2026-08-01",
   "task": {
     "id": 1,
-    "text": "kubectl",
-    "started": "2026-08-01T12:45:40.400Z",
+    "text": "Zammad docker doku",
+    "started": "2026-08-01T13:04:52.783Z",
     "personality": {
-      "name": "Zen Coding Monk",
-      "style": "zen"
+      "name": "Ancient Programming Wizard",
+      "style": "wise"
     }
   },
   "messages": [
     {
-      "text": "At 17:00, delete one unused resource and let the cluster breathe. (via Gemini at 17:00)",
-      "date": "2026-08-01T12:45:50.127Z",
-      "delivery_time": "2026-08-01T17:00:00.000"
+      "text": "*Hark, mortal!* By the 14th hour of the clock, have the Zammad Docker spellbook summoned into existence, lest the server demons awaken!",
+      "date": "2026-08-01T13:05:05.613Z",
+      "delivery_time": "2026-08-01T14:00:00.000"
     },
     {
-      "text": "Inhaled. Let's tame that cluster at 15:00. (via Gemini at 15:00)",
-      "date": "2026-08-01T12:45:47.371Z",
-      "delivery_time": "2026-08-01T15:00:00.000"
-    },
-    {
-      "text": "Take a deep breath—reset your context, check your current namespace, and apply that tiny fix. You've got this. (via Gemini at 12:00)",
-      "date": "2026-08-01T12:45:45.331Z",
+      "text": "*By the beard of Ada Lovelace, heed my scroll:* Hark, traveler! Cast the Zammad Docker spells into the sacred documentation tome before the clock strikes the twelfth hour, lest the ancient compilation demons awaken!",
+      "date": "2026-08-01T13:05:03.569Z",
       "delivery_time": "2026-08-01T12:00:00.000"
     },
     {
-      "text": "You've got this—one clean manifest at a time. (via Gemini at 09:00)",
-      "date": "2026-08-01T12:45:43.446Z",
-      "delivery_time": "2026-08-01T09:00:00.000"
+      "text": "*Hark, mortal!* By the tenth bell of the clockwork, thy Zammad Docker grimoire must be forged, lest the ancient scripts consume thee!",
+      "date": "2026-08-01T13:05:00.794Z",
+      "delivery_time": "2026-08-01T10:00:00.000"
+    },
+    {
+      "text": "*By the beard of Ada Lovelace, hear my arcane summons:* Hark, mortal! Thou shalt have the sacred Zammad Docker scrolls inscribed and delivered by the eighth hour, lest the ancient compilation demons consume thy soul!",
+      "date": "2026-08-01T13:04:58.662Z",
+      "delivery_time": "2026-08-01T08:00:00.000"
     }
   ],
   "config": {
     "work_start": "08:00",
-    "work_end": "18:00",
-    "schedule_times": "09:00,12:00,15:00,17:00"
+    "work_end": "16:00",
+    "schedule_times": "08:00,10:00,12:00,14:00"
   },
   "out_of_office_message": "Out of office: I am resting. Messages will appear during working hours."
 }
