@@ -24,8 +24,16 @@
           const res = await fetch('/rajino/today.json');
           if (!res.ok) throw new Error('Failed to load');
           const data = await res.json();
-          const isWorking = data.is_working_hours;
-          const workingInfo = `<p><strong>Working hours:</strong> ${escapeHtml(data.config.work_start)} - ${escapeHtml(data.config.work_end)}</p><p><strong>Schedule:</strong> ${escapeHtml(data.config.schedule_times)}</p>`;
+          const workStart = data.config.work_start || '08:00';
+          const workEnd = data.config.work_end || '18:00';
+          const now = new Date();
+          const [sh, sm] = (workStart || '08:00').split(':').map(Number);
+          const [eh, em] = (workEnd || '18:00').split(':').map(Number);
+          const nowMinutes = now.getHours() * 60 + now.getMinutes();
+          const startMinutes = sh * 60 + sm;
+          const endMinutes = eh * 60 + em;
+          const isWorking = nowMinutes >= startMinutes && nowMinutes < endMinutes;
+          const workingInfo = `<p><strong>Working hours:</strong> ${escapeHtml(workStart)} - ${escapeHtml(workEnd)}</p><p><strong>Schedule:</strong> ${escapeHtml(data.config.schedule_times)}</p>`;
 
           if (!isWorking) {
             document.getElementById('current').innerHTML = `${workingInfo}<p><strong>Task:</strong> ${escapeHtml(data.task.text)}</p><p><em>${escapeHtml(data.out_of_office_message)}</em></p>`;
@@ -33,11 +41,22 @@
             return;
           }
 
-          document.getElementById('current').innerHTML = `${workingInfo}<p><strong>Task:</strong> ${escapeHtml(data.task.text)}</p><p><strong>Current:</strong> ${escapeHtml(data.messages[0] ? data.messages[0].text : 'No messages yet')}</p>`;
+          const currentMessage = data.messages.length
+            ? data.messages.reduce((latest, message) => {
+                const latestTime = new Date(latest.delivery_time || latest.date).getTime();
+                const messageTime = new Date(message.delivery_time || message.date).getTime();
+                return messageTime > latestTime ? message : latest;
+              }, data.messages[0])
+            : null;
+
+          document.getElementById('current').innerHTML = `${workingInfo}<p><strong>Task:</strong> ${escapeHtml(data.task.text)}</p><p><strong>Current:</strong> ${escapeHtml(currentMessage ? currentMessage.text : 'No messages yet')}</p>`;
 
           const container = document.getElementById('messages');
-          if (!data.messages.length) container.innerHTML = '<p>No messages today.</p>';
-          container.innerHTML = data.messages.map(m => `<div class="entry"><p>${escapeHtml(m.text)}</p><small>${escapeHtml(m.delivery_time || m.date)}</small></div>`).join('');
+          if (!data.messages.length) {
+            container.innerHTML = '<p>No messages today.</p>';
+          } else {
+            container.innerHTML = data.messages.map(m => `<div class="entry"><p>${escapeHtml(m.text)}</p><small>${escapeHtml(m.delivery_time || m.date)}</small></div>`).join('');
+          }
         } catch (e) {
           document.getElementById('current').innerText = 'Unable to load messages.';
           console.error(e);
