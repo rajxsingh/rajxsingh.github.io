@@ -45,7 +45,7 @@
             ? data.messages.reduce((latest, message) => {
                 const latestTime = new Date(latest.delivery_time || latest.date).getTime();
                 const messageTime = new Date(message.delivery_time || message.date).getTime();
-                return messageTime > latestTime ? message : latest;
+                return messageTime > latestTime ? latest : message;
               }, data.messages[0])
             : null;
 
